@@ -57,6 +57,8 @@ type (
 		Timeout     int
 		numReplicas int
 		Datacenter  string
+		DisableInitialHostLookup bool
+		DisableHostEvents bool
 		TLS         *auth.TLS
 	}
 )
@@ -133,6 +135,8 @@ func (cfg *CQLClientConfig) toCassandraConfig() *config.Cassandra {
 		Keyspace:   cfg.Keyspace,
 		TLS:        cfg.TLS,
 		Datacenter: cfg.Datacenter,
+		DisableInitialHostLookup: cfg.DisableInitialHostLookup,
+		DisableHostEvents: cfg.DisableHostEvents,
 	}
 
 	return &cassandraConfig

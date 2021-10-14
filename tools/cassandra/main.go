@@ -112,6 +112,16 @@ func buildCLIOptions() *cli.App {
 			EnvVar: "CASSANDRA_DATACENTER",
 		},
 		cli.BoolFlag{
+			Name:   schema.CLIFlagDisableInitialHostLookup,
+			Usage:  "instructs the gocql client to connect only using the supplied hosts",
+			EnvVar: "CASSANDRA_DISABLE_INITIAL_HOST_LOOKUP",
+		},
+		cli.BoolFlag{
+			Name:   schema.CLIFlagDisableHostEvents,
+			Usage:  "prevents the gocql client from using host events to discover new hosts",
+			EnvVar: "CASSANDRA_DISABLE_HOST_EVENTS",
+		},
+		cli.BoolFlag{
 			Name:  schema.CLIFlagQuiet,
 			Usage: "Don't set exit status to 1 on error",
 		},

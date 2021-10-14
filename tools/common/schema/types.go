@@ -87,6 +87,10 @@ const (
 	CLIOptKeyspace = "keyspace"
 	// CLIOptDatabase is the cli option for database
 	CLIOptDatabase = "database"
+	// CLIOptDisableInitialHostLookup is the cli option for disabling gocql's InitialHostLookup
+	CLIOptDisableInitialHostLookup = "disable-initial-host-lookup"
+	// CLIOptDisableHostEvents is the cli option for disabling gocql's Host event monitoring
+	CLIOptDisableHostEvents = "disable-host-events"
 	// CLIOptPluginName is the cli option for plugin name
 	CLIOptPluginName = "plugin"
 	// CLIOptConnectAttributes is the cli option for connect attributes (key/values via a url query string)
@@ -126,6 +130,10 @@ const (
 	CLIFlagKeyspace = CLIOptKeyspace + ", k"
 	// CLIFlagDatabase is the cli flag for database
 	CLIFlagDatabase = CLIOptDatabase + ", db"
+	// CLIFlagDisableInitialHostLookup is the cli flag for disabling gocql's initial host lookup
+	CLIFlagDisableInitialHostLookup = CLIOptDisableInitialHostLookup + ", dihl"
+	// CLIFlagDisableHostEvents is the cli flag for disabling gocql's host event monitoring
+	CLIFlagDisableHostEvents = CLIOptDisableHostEvents + ", dhe"
 	// CLIFlagPluginName is the cli flag for plugin name
 	CLIFlagPluginName = CLIOptPluginName + ", pl"
 	// CLIFlagConnectAttributes allows arbitrary connect attributes

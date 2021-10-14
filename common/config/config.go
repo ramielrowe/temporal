@@ -287,6 +287,8 @@ type (
 		Consistency *CassandraStoreConsistency `yaml:"consistency"`
 		// DisableInitialHostLookup instructs the gocql client to connect only using the supplied hosts
 		DisableInitialHostLookup bool `yaml:"disableInitialHostLookup"`
+		// DisableHostEvents prevents the gocql client from using host events to discover new hosts
+		DisableHostEvents bool `yaml:"disableHostEvents"`
 	}
 
 	// CassandraStoreConsistency enables you to set the consistency settings for each Cassandra Persistence Store for Temporal

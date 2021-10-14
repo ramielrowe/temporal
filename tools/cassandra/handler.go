@@ -161,6 +161,8 @@ func newCQLClientConfig(cli *cli.Context) (*CQLClientConfig, error) {
 	config.Password = cli.GlobalString(schema.CLIOptPassword)
 	config.Timeout = cli.GlobalInt(schema.CLIOptTimeout)
 	config.Keyspace = cli.GlobalString(schema.CLIOptKeyspace)
+	config.DisableInitialHostLookup = cli.GlobalBool(schema.CLIOptDisableInitialHostLookup)
+	config.DisableHostEvents = cli.GlobalBool(schema.CLIOptDisableHostEvents)
 	config.numReplicas = cli.Int(schema.CLIOptReplicationFactor)
 	config.Datacenter = cli.String(schema.CLIOptDatacenter)
 

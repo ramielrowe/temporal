@@ -151,6 +151,11 @@ func NewCassandraCluster(
 	cluster.SerialConsistency = cfg.Consistency.GetSerialConsistency()
 	cluster.DisableInitialHostLookup = cfg.DisableInitialHostLookup
 
+	if cfg.DisableHostEvents {
+		cluster.Events.DisableNodeStatusEvents = true
+		cluster.Events.DisableTopologyEvents = true
+	}
+
 	cluster.ReconnectionPolicy = &gocql.ExponentialReconnectionPolicy{
 		MaxRetries:      30,
 		InitialInterval: time.Second,
