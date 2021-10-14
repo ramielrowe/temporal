@@ -10,7 +10,7 @@ CREATE TABLE open_executions (
   encoding             text,
   task_queue            text,
   PRIMARY KEY  ((namespace_id, namespace_partition), start_time, run_id)
-) WITH CLUSTERING ORDER BY (start_time DESC)
+) WITH CLUSTERING ORDER BY (start_time DESC, run_id ASC)
   AND COMPACTION = {
     'class': 'org.apache.cassandra.db.compaction.LeveledCompactionStrategy',
     'tombstone_threshold': 0.6
@@ -37,7 +37,7 @@ CREATE TABLE closed_executions (
   encoding             text,
   task_queue            text,
   PRIMARY KEY  ((namespace_id, namespace_partition), close_time, run_id)
-) WITH CLUSTERING ORDER BY (close_time DESC)
+) WITH CLUSTERING ORDER BY (close_time DESC, run_id ASC)
   AND COMPACTION = {
     'class': 'org.apache.cassandra.db.compaction.LeveledCompactionStrategy'
   }
